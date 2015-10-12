@@ -1,7 +1,6 @@
 <?php
 //connect.database
 
-require'include/database.php';
 
 //Retrive data from database
 
