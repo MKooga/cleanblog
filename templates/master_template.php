@@ -68,7 +68,7 @@
     </div>
     <!-- /.container -->
 </nav>
-<?php require 'pages/$page.php'; ?>
+<?php if(file_exists("pages/$page.php")) require "pages/$page.php"; else require "pages/error.php" ?>
 <!-- Footer -->
 <footer>
     <div class="container">
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                <p class="copyright text-muted">Copyright &copy; Your Website <?=date('Y')?></p>
             </div>
         </div>
     </div>
