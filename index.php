@@ -1,11 +1,16 @@
 <?php
 
+date_default_timezone_set('Europe/Tallinn');
+
 $page_load_start = microtime(1);
 
 require 'include/database.php';
 
-$page=empty($_GET{'page'}) && file_exists("pages/page.php") ? $_GET['page'] : 'home' ;
+$page=!empty($_GET['page']) ? $_GET['page'] : 'home' ;
 
+if(file_exists("controllers/$page.php")){
+    require "controllers/$page.php";
+}
 
 
 
